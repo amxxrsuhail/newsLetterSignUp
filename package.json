@@ -1,0 +1,22 @@
+{
+  "name": "newslettersignup",
+  "version": "1.0.0",
+  "description": "A project to practice sign up landing page and users can subscribe to my newsletter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amxxrsuhail/newsLetterSignUp.git"
+  },
+  "author": "Ameer Suhail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amxxrsuhail/newsLetterSignUp/issues"
+  },
+  "homepage": "https://github.com/amxxrsuhail/newsLetterSignUp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

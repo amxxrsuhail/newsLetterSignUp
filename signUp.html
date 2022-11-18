@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="News Letter" content="">
+    <meta name="Ameer Suhail" content="">
+    <title>Newsletter Sign Up</title>
+    <link rel="icon" href="icons/resume.png" type="image/x-icon" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <!-- * css is linked differently since for it to load in the server we gotta put it in a different folder and mention the folder here as id we are inside public folder   -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+    <main class="form-signin w-100 m-auto">
+        <form action="/" method="post">
+            <img class="mb-4" src="icons/resume.png" alt="logo" width="100">
+            <h1 class="h3 mb-3 fw-normal">Sign up to get updates!</h1>
+
+            <div class="form-floating top">
+                <input type="text" class="form-control" placeholder="First Name" name="firstName">
+                <label for="floatingInput">First Name</label>
+            </div>
+            <div class="form-floating middle">
+                <input type="text" class="form-control" placeholder="Last Name" name="lastName">
+                <label for="floatingInput">Last Name</label>
+            </div>
+            <div class="form-floating bottom">
+                <input type="email" class="form-control" placeholder="Email Address" name="emailAddress">
+                <label for="floatingInput">Email Address</label>
+            </div>
+            <br>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+            <p class="mt-5 mb-3 text-muted">&copy; Ameer Suhail</p>
+        </form>
+    </main>
+
+</body>
+
+</html>
