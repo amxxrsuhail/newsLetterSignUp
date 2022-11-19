@@ -44,7 +44,7 @@ app.post("/", (req, res) => {
 app.post("/failure.html", (req, res) => {
   res.redirect("/");
 });
-
-app.listen(port, () => {
+// * process.env.PORT is used to so that heroku can assign the port as they like 
+app.listen(process.env.PORT || port, () => {
   console.log(`Server started listening on port ${port}`);
 });
