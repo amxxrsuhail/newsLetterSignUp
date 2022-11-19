@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 mailchimp.setConfig({
-  apiKey: "4ce10ff17c9d6f5a6b6e8d91492d9fa7-us21",
+  apiKey: "5a35895ca39a50a6e478a936f5778-us21",
   server: "us21",
 });
 
@@ -22,27 +22,29 @@ app.post("/", (req, res) => {
   const email = req.body.emailAddress;
 
   async function run() {
-    const listId = "6078fe4028";
-    const response = await mailchimp.lists.addListMember(listId, {
-      email_address: email,
-      status: "subscribed",
-      merge_fields: {
-        FNAME: fName,
-        LNAME: lName,
-      },
-    });
+    //*try catch is used to response based on status
+    try {
+      const listId = "6078fe4028";
+      const response = await mailchimp.lists.addListMember(listId, {
+        email_address: email,
+        status: "subscribed",
+        merge_fields: {
+          FNAME: fName,
+          LNAME: lName,
+        },
+      });
+      res.sendFile(`${__dirname}/success.html`);
+    } catch (err) {
+      res.sendFile(`${__dirname}/failure.html`);
+    }
   }
   run();
-  if (res.statusCode == 200) {
-    res.send(
-      "<h1 style='padding: 40vh 0 30vh; text-align: center; color:rgb(28, 97, 193) ;'>You Have Successfully subscribed!!!!!</h1>"
-    );
-  } else {
-    res.send(
-      "<h1 style='padding: 40vh 0 30vh; text-align: center; color:rgb(193, 28, 28) ;'>You Have Failed to Subscribe!!!!!");
-  }
+});
+
+app.post("/failure.html", (req, res) => {
+  res.redirect("/");
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Server started listening on port ${port}`);
 });
